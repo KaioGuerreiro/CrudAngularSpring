@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
 
 import { ProdutosRoutingModule } from './produtos-routing.module';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { ProdutosComponent } from './produtos/produtos.component';
   imports: [
     CommonModule,
     ProdutosRoutingModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class ProdutosModule { }
