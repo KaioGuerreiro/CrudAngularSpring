@@ -1,3 +1,4 @@
+import { ProdutosService } from './../services/produtos.service';
 import { Component } from '@angular/core';
 
 import { Produto } from '../models/produto';
@@ -9,10 +10,13 @@ import { Produto } from '../models/produto';
 })
 export class ProdutosComponent {
 
-  produtos: Produto[] = [
-    {_id: '1', name: 'Cuidados Faciais', category: 'Pele'}
-  ];
-
+  produtos: Produto[] = [];
   displayedColumns = ['name', 'category'];
-  dataSource = this.produtos
+
+  //produtosService: ProdutosService;
+
+  constructor(private produtosService: ProdutosService) {
+
+    this.produtos = this.produtosService.list();
+  }
 }
