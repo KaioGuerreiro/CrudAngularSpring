@@ -2,17 +2,21 @@ import { Injectable } from '@angular/core';
 
 import { Produto } from '../models/produto';
 import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutosService {
 
-  constructor(private httpClien: HttpClient) { }
+  private readonly API = '/assets/produtos.json'
 
-  list(): Produto[] {
-    return [
-      { _id: '1', name: 'Cuidados', category: 'Pele'}
-    ];
+  constructor(private httpClient: HttpClient) { }
+
+  list() {
+    return this.httpClient.get<Produto[]>(this.API)
+    .pipe(
+      tap(produtos => console.log(produtos))
+    );
   }
 }
