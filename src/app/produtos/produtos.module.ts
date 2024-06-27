@@ -6,6 +6,7 @@ import { ProdutosRoutingModule } from './produtos-routing.module';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { ProdutosService } from './services/produtos.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ProdutosService } from './services/produtos.service';
     CommonModule,
     ProdutosRoutingModule,
     AppMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [ProdutosService],
 })
