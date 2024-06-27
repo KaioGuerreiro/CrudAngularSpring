@@ -11,12 +11,12 @@ import { Observable } from 'rxjs';
 })
 export class ProdutosComponent implements OnInit {
 
-  produtos: Observable<Produto[]>;
+  produtos$: Observable<Produto[]>;
   displayedColumns = ['name', 'category'];
 
   constructor(private produtosService: ProdutosService) {
 
-    this.produtos = this.produtosService.list();
+    this.produtos$ = this.produtosService.list();
   }
   ngOnInit(): void {
 
